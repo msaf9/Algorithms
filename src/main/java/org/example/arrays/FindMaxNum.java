@@ -4,7 +4,9 @@ public class FindMaxNum {
     public static void main (String[] args) {
         int[] numbers = {9, 3, 11, 7, 2};
 
-        System.out.print("Give numbers: ");
+        check(numbers);
+
+        System.out.print("Given numbers: ");
         for (int i : numbers) {
             System.out.print(i + " ");
         }
@@ -13,6 +15,8 @@ public class FindMaxNum {
     }
 
     public static int findMax (int[] numbers) {
+        check(numbers);
+
         int max = numbers[0];
 
         for (int number : numbers) {
@@ -22,5 +26,11 @@ public class FindMaxNum {
         }
 
         return max;
+    }
+
+    public static void check(int[] numbers) {
+        if (numbers == null || numbers.length == 0) {
+            throw new IllegalArgumentException("numbers array cannot be null or empty!");
+        }
     }
 }
